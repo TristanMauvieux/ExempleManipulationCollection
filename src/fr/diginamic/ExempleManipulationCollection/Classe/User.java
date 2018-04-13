@@ -1,6 +1,8 @@
 package fr.diginamic.ExempleManipulationCollection.Classe;
 
-public class User {
+import java.util.List;
+
+public class User implements Comparable<User> {
 
 	private String name;
 	private Integer age;
@@ -47,5 +49,26 @@ public class User {
 		return builder.toString();
 	}
 	
+	public void afficherList(List<User> users) {
+		
+		for (int i = 0; i < users.size(); i++) {
+			User utilisateur = users.get(i);
+			System.out.println(utilisateur.toString());
+		}
+		
+		System.out.println("**********************************************************");
+	}
+	
+	@Override
+	public int compareTo(User user) {
+		int position = name.compareTo(user.getName());
+		if (position > 0) {
+			return position;
+		}
+		if (position <0) {
+			return position;
+		}
+		return 0;
+	}
 	
 }
