@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 import fr.diginamic.ExempleManipulationCollection.Classe.User;
@@ -49,6 +50,13 @@ public class Main {
 		Collections.sort(users);
 		
 		utilisateurPremier.afficherList(users);
+		
+		Iterator<User> iterationDeUser = users.iterator();
+		
+		while (iterationDeUser.hasNext()) {
+			User user = (User) iterationDeUser.next();
+			System.out.println(user.toString());
+		}
 		
 	}
 
