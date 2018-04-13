@@ -28,7 +28,7 @@ public class main {
 		 */
 		for (int i = 0; i < users.size(); i++) {
 			User utilisateur = users.get(i);
-			utilisateur.toString();
+			System.out.println(utilisateur.toString());
 		}
 	}
 
