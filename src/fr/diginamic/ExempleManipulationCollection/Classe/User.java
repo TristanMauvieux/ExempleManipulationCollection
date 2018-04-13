@@ -1,5 +1,6 @@
 package fr.diginamic.ExempleManipulationCollection.Classe;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class User implements Comparable<User> {
@@ -49,11 +50,17 @@ public class User implements Comparable<User> {
 		return builder.toString();
 	}
 	
-	public void afficherList(List<User> users) {
+	/**
+	 * Permet d'afficher les utilisateurs d'une liste d'utilisateur via un iterateur
+	 * @param users ( Liste d'utilisateur)
+	 */
+	public static void afficherList(List<User> users) {
+	
+		Iterator<User> iterationDeUser = users.iterator();
 		
-		for (int i = 0; i < users.size(); i++) {
-			User utilisateur = users.get(i);
-			System.out.println(utilisateur.toString());
+		while (iterationDeUser.hasNext()) {
+			User user = (User) iterationDeUser.next();
+			System.out.println(user.toString());
 		}
 		
 		System.out.println("**********************************************************");
